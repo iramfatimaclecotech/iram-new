@@ -1,0 +1,21 @@
+<%= form_with(model: post, remote: true, class: 'mb-4') do |form| %>
+  <div class="mb-3" style="background-color: #f0f0f0; padding: 10px;">
+    <%= form.label :title, class: 'form-label text-primary s1', style: 'background-color: #e6e6e6;' %>
+    <%= form.text_field :title, class: 'form-control bg-light text-dark', placeholder: 'Enter title' %>
+  </div>
+
+  <div class="mb-3" style="background-color: #f0f0f0; padding: 10px;">
+    <%= form.label :body, class: 'form-label text-success', style: 'background-color: #e6e6e6;' %>
+    <%= form.text_area :body, class: 'form-control bg-light text-dark', placeholder: 'Enter body' %>
+  </div>
+
+  <div class="mb-3" style="background-color: #f0f0f0; padding: 10px;">
+    <%= form.submit (post.persisted? ? 'Update' : 'Create'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<style>
+.s1 {
+  padding: 15px;
+}
+</style>

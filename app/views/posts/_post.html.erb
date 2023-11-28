@@ -1,0 +1,13 @@
+<%= turbo_frame_tag post do %>
+  <div class="card mb-3 border-primary" style="background-color: #f0f0f0;">
+    <div class="card-body">
+      <h5 class="card-title text-primary font-weight-bold">Title: <%= post.title %></h5>
+      <p class="card-text text-success font-italic">Body: <%= post.body %></p>
+      <%= link_to 'Edit', edit_post_path(post.id), remote: true, data: { action: 'ajax:success->post#update', post_id: post.id }, class: 'btn btn-danger' %>
+      <%= link_to "delete", post_path(post.id), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+<% end %>

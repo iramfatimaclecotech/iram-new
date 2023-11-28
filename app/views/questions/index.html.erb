@@ -1,0 +1,9 @@
+<%= turbo_frame_tag 'openai-form' do %>
+  <%= form_with(url: generate_openai_text_questions_path, method: :post, id: 'openai-form') do |form| %>
+    <%= form.text_field :prompt, placeholder: 'Enter your prompt' %>
+    <%= form.submit 'Generate Text' %>
+  <% end %>
+<% end %>
+
+<%= render partial: 'openai_partial', locals: { text: 'Default text' } %>
+

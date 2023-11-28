@@ -1,0 +1,37 @@
+
+<div class="container" style="background-color: #eda1a1;; padding: 20px;">
+  <div class="row">
+    <div class="col" style="background-color: #ffffff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <h1 class="s">Posts New</h1>
+      <%= turbo_frame_tag 'post-form' do %>
+        <%= render 'form', post: Post.new %>
+      <% end %>
+    </div>
+    <div class="col" style="background-color: #ffffff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <%= turbo_frame_tag 'post-list' do %>
+        <h2 style="margin-top: 30px;">Posts List</h2>
+        <%= render @posts %>
+      <% end %>
+    </div>
+    <div class="w-100"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<style>
+
+.s {
+    margin-top: -13px;
+    margin-bottom: -0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 29px;
+    color: var(--bs-heading-color);
+}
+
+</style>
